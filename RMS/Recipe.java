@@ -18,7 +18,8 @@ public class Recipe{
         this.time_taken = "0 mins";
     }
 
-    public void add_time (String time) {
+    //setting purposes
+    public void add_time (String time) { //add time taken
         this.time_taken = time;
     }
     public void add_ingredient (String ingredient) { //add ingredient
@@ -66,6 +67,24 @@ public class Recipe{
             case "soy":
                 this.food_allergy.add("Contains soy");
                 break;
+        }
+    }
+
+    //getting purposes
+    public String getName() {
+        return this.name;
+    }
+    public String getTime_taken() {
+        return this.time_taken;
+    }
+    public void print_Ingredients() { //this will be modified to fit with gui format but for now this is gonna be written in terminal style
+        for (int i=0; i<ingredients.size(); i++) {
+            System.out.println(" - " + ingredients.get(i));
+        }
+    }
+    public void print_Instructions() { //this will be modified to fit with gui format but for now this is gonna be written in terminal style
+        for (int i=0; i<instructions.size(); i++) {
+            System.out.println((i+1) + ") " + instructions.get(i));
         }
     }
 
